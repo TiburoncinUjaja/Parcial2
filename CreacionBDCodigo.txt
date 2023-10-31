@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS usuarios CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai;
+
+USE usuarios;
+
+-- Tabla usuarios
+CREATE TABLE IF NOT EXISTS usuarios (
+    id_usuario INT AUTO_INCREMENT,
+    password VARCHAR(255),
+    username VARCHAR(255),
+    PRIMARY KEY (id_usuario)
+) ENGINE=InnoDB;
+
+-- Tabla todo
+CREATE TABLE IF NOT EXISTS todo (
+    id INT AUTO_INCREMENT,
+    user_name VARCHAR(255),
+    entry_hour DATETIME,
+    location VARCHAR(255),
+    plate VARCHAR(255),
+    vehicle_type VARCHAR(255),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+-- Tabla rol
+CREATE TABLE IF NOT EXISTS rol (
+    id_rol INT AUTO_INCREMENT,
+    nombre VARCHAR(255),
+    id_usuario INT,
+    PRIMARY KEY (id_rol),
+    CONSTRAINT id_rol_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
+) ENGINE=InnoDB;
