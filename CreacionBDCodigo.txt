@@ -29,3 +29,16 @@ CREATE TABLE IF NOT EXISTS rol (
     PRIMARY KEY (id_rol),
     CONSTRAINT id_rol_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
+
+-- Insertar datos en la tabla 'rol'
+INSERT INTO rol (id_rol, nombre, id_usuario) VALUES 
+(1, 'ROLE_ADMIN', 1),
+(2, 'ROLE_USER', 2),
+(3, 'ROLE_USER', 1);
+
+-- Insertar datos en la tabla 'usuario'
+INSERT INTO usuario (id_usuario, password, username) VALUES 
+(1, 'Admin4321', 'Admin'),
+(2, 'Juan1234', 'Juan');
+
