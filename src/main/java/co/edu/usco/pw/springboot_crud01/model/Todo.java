@@ -13,22 +13,22 @@ public class Todo {
     private long id;
 
     private String userName;
-    private String plate;
-    private int entryHour;
-    private int exitHour;
-    private String location;
-    private String vehicleType;
+    private String name;
+    private String schedule;
+    private String teacher;
+    private String classroom;
+    private String status;
 
     public Todo() {
     }
 
-    public Todo(String userName, String plate, int entryHour, int exitHour, String location, String vehicleType) {
+    public Todo(String userName, String name, String schedule, String teacher, String classroom, String status) {
         this.userName = userName;
-        this.plate = plate;
-        this.entryHour = entryHour;
-        this.exitHour = exitHour;
-        this.location = location;
-        this.vehicleType = vehicleType;
+        this.name = name;
+        this.schedule = schedule;
+        this.teacher = teacher;
+        this.classroom = classroom;
+        this.status = status;
     }
 
     public long getId() {
@@ -47,43 +47,43 @@ public class Todo {
         this.userName = userName;
     }
 
-    public String getPlate() {
-        return plate;
+    public String getName() {
+        return name;
     }
 
-    public void setPlate(String plate) {
-        this.plate = plate;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getEntryHour() {
-        return entryHour;
+    public String getSchedule() {
+        return schedule;
     }
 
-    public void setEntryHour(int entryHour) {
-        this.entryHour = entryHour;
+    public void setSchedule(String schedule) {
+        this.schedule = schedule;
     }
 
-    public int getExitHour() {
-        return exitHour;
+    public String getTeacher() {
+        return teacher;
     }
 
-    public void setExitHour(int exitHour) {
-        this.exitHour = exitHour;
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
     }
 
-    public String getLocation() {
-        return location;
+    public String getClassroom() {
+        return classroom;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setClassroom(String classroom) {
+        this.classroom = classroom;
     }
 
-    public String getVehicleType() {
-        return vehicleType;
+    public String getStatus() {
+        return status;
     }
 
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

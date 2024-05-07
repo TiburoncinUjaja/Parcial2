@@ -30,23 +30,16 @@ public class TodoController {
     @Autowired
     private ITodoService todoService;
 
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        // Date - dd/MM/yyyy
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
-    }
-    
     @GetMapping("/list-todos")
     public String showTodos(ModelMap model) {
         List<Todo> todos = todoService.getTodos();
-        model.put("todos", todos);
+        model.addAttribute("todos", todos);
 
         boolean isAdmin = isAdmin();
-        model.put("isAdmin", isAdmin);
+        model.addAttribute("isAdmin", isAdmin);
 
         String userRole = isAdmin ? "admin" : "user";
-        model.put("userRole", userRole);
+        model.addAttribute("userRole", userRole);
 
         return "list-todos";
     }
@@ -99,7 +92,7 @@ public class TodoController {
     @GetMapping("/update-todo")
     public String showUpdateTodoPage(@RequestParam long id, ModelMap model) {
         Todo todo = todoService.getTodoById(id).get();
-        model.put("todo", todo);
+        model.addAttribute("todo", todo);
         return "todo";
     }
 

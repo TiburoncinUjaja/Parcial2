@@ -33,8 +33,8 @@ public class TodoService implements ITodoService {
     }
 
     @Override
-    public void addTodo(String userName, String plate, int entryHour, int exitHour, String location, String vehicleType) {
-        Todo todo = new Todo(userName, plate, entryHour, exitHour, location, vehicleType);
+    public void addTodo(String userName, String name, String schedule, String teacher, String classroom, String status) {
+        Todo todo = new Todo(userName, name, schedule, teacher, classroom, status);
         todoRepository.save(todo);
     }
 

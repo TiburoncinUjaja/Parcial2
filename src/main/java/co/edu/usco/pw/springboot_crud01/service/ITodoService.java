@@ -8,22 +8,19 @@ import java.util.Optional;
 import co.edu.usco.pw.springboot_crud01.model.Todo;
 
 
-
 public interface ITodoService {
 
-	List<Todo> getTodosByUser(String user);
+    List<Todo> getTodosByUser(String user);
 
-	Optional<Todo> getTodoById(long id);
+    Optional<Todo> getTodoById(long id);
 
-	void updateTodo(Todo todo);
+    void updateTodo(Todo todo);
 
+    void deleteTodo(long id);
 
-	void deleteTodo(long id);
-	
-	void saveTodo(Todo todo);
+    void saveTodo(Todo todo);
 
-	List<Todo> getTodos();
+    List<Todo> getTodos();
 
-	void addTodo(String userName, String plate, int entryHour, int exitHour, String location, String vehicleType);
-
+    void addTodo(String userName, String name, String schedule, String teacher, String classroom, String status);
 }
